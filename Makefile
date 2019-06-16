@@ -10,8 +10,9 @@ install-vim:
 	ln -s ~/.vim/vimrc ~/.vimrc
 
 install-sh:
-	rm -f ~/.myprofile
+	rm -f ~/.myprofile ~/.inputrc
 	ln -s `pwd`/sh/myprofile ~/.myprofile
+	ln -s `pwd`/sh/inputrc ~/.inputrc
 
 install-bash: install-sh
 	rm -f ~/.bashrc
