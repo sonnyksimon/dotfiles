@@ -1,0 +1,14 @@
+" pathogen
+execute pathogen#infect()
+
+" enable syntax colors
+syntax on
+if has("gui_running")
+	colorscheme fruity
+	set guifont=Ubuntu\ Mono\ 10
+else
+	colorscheme myterm
+endif
+
+" enable filetype plugins and indents
+filetype plugin indent on
