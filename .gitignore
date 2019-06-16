@@ -1,4 +1,4 @@
 *.o
-*.pyc
-*.pyo
+*.py[cod]
 vim/sessions
+vim/.netrwhist
