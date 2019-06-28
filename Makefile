@@ -25,3 +25,7 @@ install-vscode:
 	rm -rf $(VSCODE_CONF)/settings.json $(VSCODE_CONF)/snippets
 	ln -s `pwd`/vscode/settings.json $(VSCODE_CONF)/settings.json
 	ln -s `pwd`/vscode/snippets $(VSCODE_CONF)/snippets
+
+install-ranger:
+	rm -rf ~/.config/ranger
+	ln -s `pwd`/ranger ~/.config/ranger
