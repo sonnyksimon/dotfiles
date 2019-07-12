@@ -30,6 +30,10 @@ install-ranger:
 	rm -rf ~/.config/ranger
 	ln -s `pwd`/ranger ~/.config/ranger
 
+configure-bash:
+	rm -f ~/.bash_profile
+	ln -s `pwd`/bash/bash_profile ~/.bash_profile
+
 configure-git:
 	git config --global user.name "Sonny Kothapally"
 	git config --global user.email me@sonnyksimon.com
