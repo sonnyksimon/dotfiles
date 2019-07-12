@@ -29,3 +29,12 @@ install-vscode:
 install-ranger:
 	rm -rf ~/.config/ranger
 	ln -s `pwd`/ranger ~/.config/ranger
+
+configure-git:
+	git config --global user.name "Sonny Kothapally"
+	git config --global user.email me@sonnyksimon.com
+	git config --global color.branch auto
+	git config --global color.diff auto
+	git config --global color.interactive auto
+	git config --global color.grep auto
+	git config --global alias.lol "log --graph --oneline --decorate --color --all"
