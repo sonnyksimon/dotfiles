@@ -5,7 +5,7 @@ execute pathogen#infect()
 syntax on
 if has("gui_running")
 	colorscheme fruity
-	set guifont=Ubuntu\ Mono\ 10
+	set guifont=Menlo 10
 else
 	colorscheme myterm
 endif
