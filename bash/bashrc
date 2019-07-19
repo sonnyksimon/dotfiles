@@ -21,6 +21,8 @@ export TERM=xterm-256color
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+export HISTTIMEFORMAT="%a, %d %b %Y %H:%M:%S "
+
 # check and update the window size after each command
 shopt -s checkwinsize
 
