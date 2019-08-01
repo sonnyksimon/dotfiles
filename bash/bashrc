@@ -2,15 +2,23 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# code from dotfiles/sh/myprofile
+. ~/.myprofile
+
 DAOS_DEFAULT_COLOR="[00m"
 DAOS_GRAY_COLOR="[37m"
 DAOS_PINK_COLOR="[01;35m"
 DAOS_GREEN_COLOR="[01;32m"
 DAOS_ORANGE_COLOR="[01;33m"
 
+daos_vcinfo() {
+  echo -e "$(vcprompt -f " on \033[34m%n\033[00m:%b\033[32m%m%u")"
+}
+
 export DAOS_BASEPROMPT="\n\e${DAOS_PINK_COLOR}\u \
 \e${DAOS_GRAY_COLOR}at \e${DAOS_ORANGE_COLOR}\h \
-\e${DAOS_GRAY_COLOR}in \e${DAOS_GREEN_COLOR}\w \
+\e${DAOS_GRAY_COLOR}in \e${DAOS_GREEN_COLOR}\w\
+\e${DAOS_GRAY_COLOR}\$(daos_vcinfo)\
 \e${DAOS_DEFAULT_COLOR}"
 export PS1="${DAOS_BASEPROMPT}
 $ "
@@ -37,8 +45,5 @@ fi
 
 # local bashrc
 if [ -f ~/.bashrc.local ]; then
-	. ~/.bashrc.local
+  . ~/.bashrc.local
 fi
-
-# code from dotfiles/sh/myprofile
-. ~/.myprofile
