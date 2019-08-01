@@ -20,7 +20,7 @@ important "for installs. It also assumes that you're using ubuntu (you gotta kno
 important "that mane."
 echo
 important "Before proceeding, if this is your first time installing, stop here and read"
-important "the script (scripts/install_ubuntu.sh). It's got pretty much all the information"
+important "the script (scripts/install_apt.sh). It's got pretty much all the information"
 important "to prevent common issues."
 echo
 important "NEVER RUN THIS ON A MACHINE OTHER THAN YOURS, IT WILL DELETE ALL YOUR FILES,"
