@@ -12,6 +12,7 @@ git
 vim
 screen
 tmux
+highlight
 net-tools
 curl
 httpie

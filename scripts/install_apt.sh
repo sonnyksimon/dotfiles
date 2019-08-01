@@ -10,6 +10,7 @@ git
 vim
 screen
 tmux
+highlight
 ranger
 net-tools
 python3
