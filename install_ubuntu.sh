@@ -16,7 +16,7 @@ function important() {
 
 echo
 important "This script assumes that you're in your own box and you have root priviledges"
-important "for installs. It also assumes that you're using ubuntu (you gotta know atleast"
+important "for installs. It also assumes that you're using ubuntu--you gotta know atleast"
 important "that mane."
 echo
 important "Before proceeding, if this is your first time installing, stop here and read"
