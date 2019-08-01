@@ -22,6 +22,8 @@ httpie
 jq
 PACKAGES
 
+gem update
+
 cat <<GEMS | xargs gem install
 jekyll
 bundler
