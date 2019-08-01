@@ -11,6 +11,7 @@ vim
 screen
 tmux
 ranger
+net-tools
 curl
 httpie
 epel-release
