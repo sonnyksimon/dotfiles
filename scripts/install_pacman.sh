@@ -21,3 +21,8 @@ curl
 httpie
 jq
 PACKAGES
+
+cat <<GEMS | xargs gem install
+jekyll
+bundler
+GEMS
