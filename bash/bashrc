@@ -11,14 +11,51 @@ DAOS_PINK_COLOR="[01;35m"
 DAOS_GREEN_COLOR="[01;32m"
 DAOS_ORANGE_COLOR="[01;33m"
 
+daos_lastcommandfailed() {
+  code=$?
+  if [ $code != 0 ]; then
+    echo -n $'\033[37m exited \033[31m'
+    echo -n $code
+    echo -n $'\033[37m'
+  fi
+}
+
+daos_backgroundjobs() {
+  jobs|python -c 'if 1:
+    import sys
+    items = ["\033[36m%s\033[37m" % x.split()[2]
+             for x in sys.stdin.read().splitlines()]
+    if items:
+      if len(items) > 2:
+        string = "%s, and %s" % (", ".join(items[:-1]), items[-1])
+      else:
+        string = ", ".join(items)
+      print("\033[37m running %s" % string)
+  '
+}
+
+daos_venvinfo() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    venv="${VIRTUAL_ENV##*/}"
+  else
+    venv=''
+  fi
+  [[ -n "$venv" ]] && echo -e " \033[37mworkon \033[31m$venv"
+}
+
 daos_vcinfo() {
   echo -e "$(vcprompt -f " on \033[34m%n\033[00m:%b\033[32m%m%u")"
 }
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 export DAOS_BASEPROMPT="\n\e${DAOS_PINK_COLOR}\u \
 \e${DAOS_GRAY_COLOR}at \e${DAOS_ORANGE_COLOR}\h \
 \e${DAOS_GRAY_COLOR}in \e${DAOS_GREEN_COLOR}\w\
+\$(daos_lastcommandfailed)\
+\$(daos_backgroundjobs)\
 \e${DAOS_GRAY_COLOR}\$(daos_vcinfo)\
+\$(daos_venvinfo)\
 \e${DAOS_DEFAULT_COLOR}"
 export PS1="${DAOS_BASEPROMPT}
 $ "
