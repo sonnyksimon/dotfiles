@@ -23,6 +23,8 @@ libpq-dev
 curl
 httpie
 jq
+nodejs
+npm
 PACKAGES
 
 cat <<GEMS | xargs gem install
