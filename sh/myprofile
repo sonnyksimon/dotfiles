@@ -32,13 +32,8 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias ll='ls -alF'
-alias lfl='ls -lF'
-alias lash='ls -alFsh'
-alias lsh='ls -lFsh'
 alias la='ls -A'
 alias l='ls -CF'
-#alias python='python3'
-#alias pip='pip3'
 alias venv='python3 -m venv'
 alias monosed='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias dollarsed='sed "s/¤/$/g"'
@@ -47,13 +42,11 @@ alias jcurl='curl -s -H "Content-Type: application/json"'
 alias jget='curl -s -X GET -H "Content-Type: application/json"'
 alias jpost='curl -s -X POST -H "Content-Type: application/json"'
 alias jqcount="jq '. | to_entries | map(.value.count=.key+1) | [.[].value]'"
-#jg() { jget "$@" | jq '.'; } 
-#jp() { jpost "$@" | jq '.'; }
 
 # LOLOL
 alias dood,=sudo
 
 # local profile settings
 if [ -f ~/.profile_local ]; then
-	source ~/.profile_local
+    source ~/.profile_local
 fi
