@@ -12,3 +12,6 @@ endif
 
 " enable filetype plugins and indents
 filetype plugin indent on
+
+" exit insert mode with jk
+inoremap jk <esc>
