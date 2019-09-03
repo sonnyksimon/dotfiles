@@ -19,3 +19,6 @@
 [submodule "vim/bundle/rust"]
 	path = vim/bundle/rust
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "vim/bundle/jq"]
+	path = vim/bundle/jq
+	url = https://github.com/vito-c/jq.vim
