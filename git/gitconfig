@@ -22,18 +22,11 @@
 	untracked = cyan
 [alias]
 	lol = log --graph --oneline --decorate --color --all
-	slog = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ \
-		%C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ \
-		%C(auto,cyan)%ar%C(auto,reset)]"
-	glog = log --graph --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ \
-		%C(auto,reset)%s\\ \\ [%C(auto,blue)%an%C(auto,reset),\\ \
-		%C(auto,cyan)%ar%C(auto,reset)]"
+	slog = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
+	glog = log --graph --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%an%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
 	gflog = log -p --cc --graph --decorate
-	wtf = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d%C(auto,reset)\\ \
-		by\\ %C(auto,blue)%an%C(auto,reset),\\ \
-		%C(auto,cyan)%ar%C(auto,reset)%n\\ %s%n" --stat
-	resetmodules = "!git submodule deinit -f . && rm -rf \"$(git rev-parse \
-		--git-dir)/modules\" && git submodule update --init"	
+	wtf = log --pretty=format:"%C(auto,yellow)%h%C(auto)%d%C(auto,reset)\\ by\\ %C(auto,blue)%an%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)%n\\ %s%n" --stat
+	resetmodules = "!git submodule deinit -f . && rm -rf \"$(git rev-parse --git-dir)/modules\" && git submodule update --init"
 [push]
 	default = current
 [diff]
