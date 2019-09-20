@@ -16,7 +16,3 @@ install-bash: install-sh
 install-git:
 	rm -f ~/.gitconfig
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
-
-install-binaries:
-	rm -rf ~/.bin
-	ln -s `pwd`/bin ~/.bin
