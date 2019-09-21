@@ -18,4 +18,10 @@ curl
 httpie
 epel-release
 jq
+python-pip
+python-devel
 PACKAGES
+
+cat <<GROUPS | xargs yum groupinstall $YUM_OPTIONS
+'development tools'
+GROUPS
