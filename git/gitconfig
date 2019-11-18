@@ -31,3 +31,5 @@
 	default = current
 [diff]
 	algorithm = patience
+[credential]
+	helper = cache
