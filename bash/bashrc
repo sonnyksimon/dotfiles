@@ -46,7 +46,7 @@ daos_venvinfo() {
 }
 
 daos_vcinfo() {
-  echo -e "$(vcprompt -f " on \033[34m%n\033[00m:%b\033[32m%m%u")"
+  echo -e "$(vcprompt -f " \033[37mon \033[34m%n\033[00m:%b\033[32m%m%u")"
 }
 
 daos_time() {
@@ -62,9 +62,9 @@ export DAOS_BASEPROMPT="\n\e${DAOS_PINK_COLOR}\u \
 \e${DAOS_GRAY_COLOR}in \e${DAOS_GREEN_COLOR}\w\
 \$(daos_lastcommandfailed)\
 \$(daos_backgroundjobs)\
-\e${DAOS_GRAY_COLOR}\$(daos_vcinfo)\
 \$(daos_venvinfo)\
 \$(daos_time)\
+\$(daos_vcinfo)\
 \e${DAOS_DEFAULT_COLOR}"
 export PS1="${DAOS_BASEPROMPT}
 $ "
