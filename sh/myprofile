@@ -10,6 +10,10 @@ export PATH="$GEM_HOME/bin:$PATH"
 export CARGO_HOME="$HOME/.cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
 
+export GOROOT="/usr/local/go"
+export GOPATH="$HOME/go"
+export PATH="$GOROOT/bin:$PATH"
+
 export PRODUCTION_MODE=False
 
 # make less more friendly for non-text input files, see lesspipe(1)
