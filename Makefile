@@ -1,4 +1,4 @@
-install: install-vim install-bash install-git
+install: install-vim install-bash install-screen install-git
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -12,6 +12,10 @@ install-sh:
 install-bash: install-sh
 	rm -f ~/.bashrc
 	ln -s `pwd`/bash/bashrc ~/.bashrc
+
+install-screen:
+	rm -f ~/.screenrc
+	ln -s `pwd`/screen/screenrc ~/.screenrc
 
 install-git:
 	rm -f ~/.gitconfig

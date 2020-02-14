@@ -1,0 +1,2 @@
+startup_message off
+hardstatus alwayslastline '%{Yk}%-w%{.Yk}%n %t%{-}%+w %=%{.w} %{kY}%C'
