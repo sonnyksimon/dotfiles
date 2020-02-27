@@ -67,7 +67,7 @@ export DAOS_BASEPROMPT="\n\e${DAOS_PINK_COLOR}\u \
 \$(daos_vcinfo)\
 \e${DAOS_DEFAULT_COLOR}"
 export PS1="${DAOS_BASEPROMPT}
-\!: "
+\#: "
 
 # always support 256 colors
 export TERM=xterm-256color
