@@ -1,4 +1,4 @@
-install: install-vim install-bash install-screen install-git
+install: install-vim install-bash install-screen install-tmux install-git
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -16,6 +16,10 @@ install-bash: install-sh
 install-screen:
 	rm -f ~/.screenrc
 	ln -s `pwd`/screen/screenrc ~/.screenrc
+
+install-tmux:
+	rm -f ~/.tmux.conf
+	ln -s `pwd`/tmux/tmuxconf ~/.tmux.conf
 
 install-git:
 	rm -f ~/.gitconfig
