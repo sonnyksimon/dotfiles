@@ -17,4 +17,14 @@ filetype plugin indent on
 inoremap jk <esc>
 
 " show line numbers
-:set relativenumber
+set relativenumber
+
+" use spaces
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
+" don't wrap
+set nowrap
+
