@@ -15,3 +15,6 @@ filetype plugin indent on
 
 " exit insert mode with jk
 inoremap jk <esc>
+
+" show line numbers
+:set relativenumber
