@@ -59,7 +59,7 @@ daos_hostname() {
   if [ "$(hostname)" = "localhost.localdomain" ]; then 
     hostname -I | cut -d" " -f1; 
   else 
-    echo hostname; 
+    hostname; 
   fi
 }
 
