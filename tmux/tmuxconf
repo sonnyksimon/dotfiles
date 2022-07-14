@@ -1,1 +1,10 @@
 bind-key r source-file ~/.tmux.conf
+
+set -g status-right "\
+[#(\
+  if [ "$(hostname)" = "localhost.localdomain" ]; then\
+    hostname -I | cut -d\" \" -f1;\
+  else\
+    hostname;\
+  fi\
+)] %Y-%m-%d %H:%M:%S"

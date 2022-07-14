@@ -55,10 +55,18 @@ daos_time() {
   echo -n $'\033[37m'
 }
 
+daos_hostname() {
+  if [ "$(hostname)" = "localhost.localdomain" ]; then 
+    hostname -I | cut -d" " -f1; 
+  else 
+    echo hostname; 
+  fi
+}
+
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export DAOS_BASEPROMPT="\n\e${DAOS_PINK_COLOR}\u \
-\e${DAOS_GRAY_COLOR}at \e${DAOS_ORANGE_COLOR}\h \
+\e${DAOS_GRAY_COLOR}at \e${DAOS_ORANGE_COLOR}\$(daos_hostname) \
 \e${DAOS_GRAY_COLOR}in \e${DAOS_GREEN_COLOR}\w\
 \$(daos_lastcommandfailed)\
 \$(daos_backgroundjobs)\
