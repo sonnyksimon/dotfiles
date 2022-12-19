@@ -56,11 +56,7 @@ daos_time() {
 }
 
 daos_hostname() {
-  if [ "$(hostname)" = "localhost.localdomain" ]; then 
-    hostname -I | cut -d" " -f1; 
-  else 
-    hostname; 
-  fi
+  echo -e "$(hostname) [$(hostname -I | cut -d' ' -f1)]"
 }
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
