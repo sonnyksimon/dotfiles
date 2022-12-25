@@ -15,6 +15,7 @@ export GOPATH="$HOME/go"
 export PATH="$GOROOT/bin:$PATH"
 
 export PRODUCTION_MODE=False
+export TZ="UTC"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -35,17 +36,19 @@ fi
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-alias ll='ls -alF'
+alias ll='ls -alF --time-style="+%d-%b-%Y %H:%M:%S %Z"'
 alias la='ls -A'
 alias l='ls -CF'
 alias venv='python3 -m venv'
 alias monosed='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias dollarsed='sed "s/¤/$/g"'
-#alias colorit="highlight $@ --out-format xterm256 --force"
+alias colorit="highlight $@ --out-format xterm256 --force"
 alias tabawk='awk "{print \"\t\"\$0}"'
 alias 2sawk='awk "{print \"  \"\$0}"'
 alias 4sawk='awk "{print \"    \"\$0}"'
 alias tmuxbase='tmux attach -t base || tmux new -s base'
+alias rcp='rsync -ah --partial --progress'
+alias rscp='rsync -ah --partial --progress --rsh=ssh'
 alias jcurl='curl -s -H "Content-Type: application/json"'
 alias jget='curl -s -X GET -H "Content-Type: application/json"'
 alias jpost='curl -s -X POST -H "Content-Type: application/json"'
