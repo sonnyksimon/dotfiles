@@ -53,8 +53,8 @@ alias jcurl='curl -s -H "Content-Type: application/json"'
 alias jget='curl -s -X GET -H "Content-Type: application/json"'
 alias jpost='curl -s -X POST -H "Content-Type: application/json"'
 alias jqcount="jq '. | to_entries | map(.value.count=.key+1) | [.[].value]'"
-function dirSize { du -sc --exclude="lost+found" * | sort -n | awk '{size=$1; $1=""; gsub(/^ */,"",$0); printf "%10.3f MB    %-s\n",size/1024,$0}' }
-function dirSizeG { du -sc --exclude="lost+found" * | sort -n | awk '{size=$1; $1=""; gsub(/^ */,"",$0); printf "%10.3f GB    %-s\n",size/1024/1024,$0}' }
+function dirSize { du -sc --exclude="lost+found" * | sort -n | awk '{size=$1; $1=""; gsub(/^ */,"",$0); printf "%10.3f MB    %-s\n",size/1024,$0}'; }
+function dirSizeG { du -sc --exclude="lost+found" * | sort -n | awk '{size=$1; $1=""; gsub(/^ */,"",$0); printf "%10.3f GB    %-s\n",size/1024/1024,$0}'; }
 
 # LOLOL
 alias dood,=sudo
