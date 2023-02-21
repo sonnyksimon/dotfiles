@@ -42,6 +42,7 @@ alias l='ls -CF'
 alias venv='python3 -m venv'
 alias monosed='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias dollarsed='sed "s/¤/$/g"'
+alias colordiff='diff --color=always -u'
 alias colorit="highlight $@ --out-format xterm256 --force"
 alias tabawk='awk "{print \"\t\"\$0}"'
 alias 2sawk='awk "{print \"  \"\$0}"'
