@@ -47,13 +47,10 @@ alias colorit="highlight $@ --out-format xterm256 --force"
 alias tabawk='awk "{print \"\t\"\$0}"'
 alias 2sawk='awk "{print \"  \"\$0}"'
 alias 4sawk='awk "{print \"    \"\$0}"'
+alias screenbase='screen -D -R -S base'
 alias tmuxbase='tmux attach -t base || tmux new -s base'
-alias rcp='rsync -ah --partial --progress'
-alias rscp='rsync -ah --partial --progress --rsh=ssh'
-alias jcurl='curl -s -H "Content-Type: application/json"'
-alias jget='curl -s -X GET -H "Content-Type: application/json"'
-alias jpost='curl -s -X POST -H "Content-Type: application/json"'
-alias jqcount="jq '. | to_entries | map(.value.count=.key+1) | [.[].value]'"
+alias cpr='rsync -ahP'
+alias scpr='rsync -ahP -e ssh'
 function dirSize { du -sc --exclude="lost+found" * | sort -n | awk '{size=$1; $1=""; gsub(/^ */,"",$0); printf "%10.3f MB    %-s\n",size/1024,$0}'; }
 function dirSizeG { du -sc --exclude="lost+found" * | sort -n | awk '{size=$1; $1=""; gsub(/^ */,"",$0); printf "%10.3f GB    %-s\n",size/1024/1024,$0}'; }
 

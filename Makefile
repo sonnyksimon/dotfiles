@@ -8,10 +8,12 @@ install-vim:
 install-sh:
 	rm -f ~/.myprofile
 	ln -s `pwd`/sh/myprofile ~/.myprofile
+	test -f ~/.profile_local || touch ~/.profile_local
 
 install-bash: install-sh
 	rm -f ~/.bashrc
 	ln -s `pwd`/bash/bashrc ~/.bashrc
+	test -f ~/.bashrc.local || touch ~/.bashrc.local
 
 install-screen:
 	rm -f ~/.screenrc
@@ -24,3 +26,4 @@ install-tmux:
 install-git:
 	rm -f ~/.gitconfig
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
+	test -f ~/.gitconfig.local || cp `pwd`/git/localconf ~/.gitconfig.local
