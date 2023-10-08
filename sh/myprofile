@@ -17,6 +17,9 @@ export PATH="$GOROOT/bin:$PATH"
 export PRODUCTION_MODE=False
 export TZ="UTC"
 
+# unset when netsh is not available
+export USE_NETSH_INFO=1
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 

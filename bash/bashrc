@@ -56,7 +56,11 @@ daos_time() {
 }
 
 daos_hostname() {
-  echo -e "$(hostname) [$(hostname -I | cut -d' ' -f1)]"
+  echo -e "$(hostname | tr '[:upper:]' '[:lower:]') [$(hostname -I | cut -d' ' -f1)]"
+}
+
+daos_connection() {
+  [[ -n "$USE_NETSH_INFO" ]] && echo -e "\n$(wlanstatus)"
 }
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -69,6 +73,7 @@ export DAOS_BASEPROMPT="\n\e${DAOS_PINK_COLOR}\u \
 \$(daos_venvinfo)\
 \$(daos_time)\
 \$(daos_vcinfo)\
+\e${DAOS_GRAY_COLOR}\$(daos_connection)\
 \e${DAOS_DEFAULT_COLOR}"
 export PS1="${DAOS_BASEPROMPT}
 \#: "

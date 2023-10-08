@@ -1,4 +1,4 @@
-install: install-vim install-bash install-screen install-tmux install-git
+install: install-vim install-bash install-screen install-tmux install-git install-python
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -27,3 +27,6 @@ install-git:
 	rm -f ~/.gitconfig
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 	test -f ~/.gitconfig.local || cp `pwd`/git/localconf ~/.gitconfig.local
+
+install-python:
+	[ -d ~/bin ] && cp `pwd`/python/* ~/bin/

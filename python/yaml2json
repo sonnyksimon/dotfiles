@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+"""yaml2json: Compact script for yaml to json conversion"""
+
+import yaml
+import json
+import sys
+
+args = [open(x,'r') for x in sys.argv[1:]]
+args = [sys.stdin.read(), *args] if not sys.stdin.isatty() else args
+files = [yaml.safe_load(y) for y in args]
+out = files[0] if len(files) == 1 else files
+
+sys.stdout.write(json.dumps(out,separators=(',',':')))
+

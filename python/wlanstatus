@@ -1,0 +1,48 @@
+#!/usr/bin/env python
+"""wlanstatus: Grabs WLAN data from netsh"""
+
+import sys
+import subprocess
+import re
+import json
+import argparse
+
+regex = re.compile(r"^    (.+?) {2,}: (.+)")
+
+# IF READING STDIN => cat /<path>/<to>/netsh.exe | wlanstatus
+#lines = sys.stdin.read().splitlines()
+
+# IF RUNNING DIRECTLY => ~/bin/wlanstatus
+lines = subprocess.Popen(
+    ['/mnt/c/Windows/System32/netsh.exe', 'wlan', 'show', 'interface'],
+    stdout=subprocess.PIPE).communicate()[0].decode().splitlines()
+
+connection_info = dict((m.group(1).strip(),m.group(2).strip()) for l in lines for m in [regex.search(l)] if m)
+
+symb_error = "❌"
+symb_conn = "🌎"
+
+state = connection_info.get("State", "unknown").lower()
+
+if state == "connected":
+    ssid = connection_info.get("SSID", "Unknown SSID")
+    auth = connection_info.get("Authentication", "Unknown authentication")
+    secured = 'securely' if auth.upper().startswith("WPA2") else 'insecurely'
+    signal = connection_info.get("Signal", None)
+    connection_status = f'{symb_conn} Connected, {secured} to {ssid}'
+    if signal: connection_status += f' at {signal}'
+else:
+    connection_status = f'{symb_error} Disconnected'
+
+parser = argparse.ArgumentParser(description="Process netsh info")
+parser.add_argument('-v', '--verbose',
+                    help='Provides connection info in JSON',
+                    action='store_true')  # on/off flag
+args = parser.parse_args()
+
+if args.verbose:
+    out = json.dumps(dict(status=connection_status, info=connection_info), separators=(',',':'))
+else:
+    out = connection_status
+
+sys.stdout.write(out)
