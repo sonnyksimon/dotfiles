@@ -73,7 +73,6 @@ export DAOS_BASEPROMPT="\n\e${DAOS_PINK_COLOR}\u \
 \$(daos_venvinfo)\
 \$(daos_time)\
 \$(daos_vcinfo)\
-\e${DAOS_GRAY_COLOR}\$(daos_connection)\
 \e${DAOS_DEFAULT_COLOR}"
 export PS1="${DAOS_BASEPROMPT}
 \#: "
