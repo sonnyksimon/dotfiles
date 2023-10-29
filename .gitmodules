@@ -22,3 +22,6 @@
 [submodule "vim/bundle/jq"]
 	path = vim/bundle/jq
 	url = https://github.com/vito-c/jq.vim
+[submodule "emacs/themes/dracula"]
+	path = emacs/themes/dracula
+	url = https://github.com/dracula/emacs

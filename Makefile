@@ -1,9 +1,13 @@
-install: install-vim install-bash install-screen install-tmux install-git install-python
+install: install-vim install-emacs install-bash install-screen install-tmux install-git install-python
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
 	ln -s `pwd`/vim ~/.vim
 	ln -s ~/.vim/vimrc ~/.vimrc
+
+install-emacs:
+	rm -rf ~/.emacs.d
+	ln -s `pwd`/emacs ~/.emacs.d
 
 install-sh:
 	rm -f ~/.myprofile

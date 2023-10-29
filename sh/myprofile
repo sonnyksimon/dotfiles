@@ -52,6 +52,7 @@ alias 2sawk='awk "{print \"  \"\$0}"'
 alias 4sawk='awk "{print \"    \"\$0}"'
 alias screenbase='screen -D -R -S base'
 alias tmuxbase='tmux attach -t base || tmux new -s base'
+alias emacsbase="emacsclient -t -a ''"
 alias cpr='rsync -ahP'
 alias scpr='rsync -ahP -e ssh'
 function dirSize { du -sc --exclude="lost+found" * | sort -n | awk '{size=$1; $1=""; gsub(/^ */,"",$0); printf "%10.3f MB    %-s\n",size/1024,$0}'; }
