@@ -1,0 +1,15 @@
+Grab emacs:
+
+#+begin_src org
+  wget https://ftp.gnu.org/gnu/emacs/emacs-VERSION.tar.xz
+  tar -axvf emacs-VERSION.tar.xz
+#+end_src
+
+Configure and install:
+
+#+begin_src org
+  cd emacs-VERSION
+  ./configure --prefix=/home/sonnyksimon/emacs --bindir=/home/sonnyksimon/bin --without-x
+  make
+  make install
+#+end_src
