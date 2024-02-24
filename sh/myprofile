@@ -4,16 +4,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:$HOME/.bin:$HOME/
 export EDITOR=vim
 export GIT_EDITOR=vim
 
-export GEM_HOME="$HOME/gems"
-export PATH="$GEM_HOME/bin:$PATH"
-
-export CARGO_HOME="$HOME/.cargo"
-export PATH="$CARGO_HOME/bin:$PATH"
-
-export GOROOT="/usr/local/go"
-export GOPATH="$HOME/go"
-export PATH="$GOROOT/bin:$PATH"
-
 export PRODUCTION_MODE=False
 export TZ="UTC"
 

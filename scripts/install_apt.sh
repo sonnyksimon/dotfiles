@@ -13,21 +13,9 @@ tmux
 highlight
 ranger
 net-tools
-python3
-python3-pip
-python3-venv
-ruby-full
 build-essential
 zlib1g-dev
-libpq-dev
 curl
-httpie
 jq
-nodejs
-npm
 PACKAGES
 
-cat <<GEMS | xargs gem install
-jekyll
-bundler
-GEMS

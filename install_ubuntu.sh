@@ -25,7 +25,8 @@ important "to prevent common issues."
 echo
 important "NEVER RUN THIS ON A MACHINE OTHER THAN YOURS, IT WILL DELETE ALL YOUR FILES,"
 important "AND OTHER WEIRD HAIRY STUFF. ONLY USE FOR FRESH INSTALLATIONS OF UBUNTU."
-read -er -n1 -p "proceed? [Y/n]" response
+echo
+read -er -n1 -p "proceed? [Y/n] " response
 if [[ $response =~ ^[Yy]$ || $response == "" ]]; then
     echo "Excellent. Here we go!"
     $SCRIPTDIR/install_apt.sh
